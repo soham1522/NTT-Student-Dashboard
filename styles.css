@@ -1,0 +1,159 @@
+/* General Styles */
+:root {
+    --primary-color: #1e40af;
+    --secondary-color: #3b82f6;
+    --background-light: #f3f4f6;
+    --text-dark: #374151;
+    --text-light: #6b7280;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: var(--background-light);
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: rgb(255, 250, 250);
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Centered Container */
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+/* Upload Section */
+.upload-box {
+    background: rgb(9, 227, 231);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.file-upload {
+    border: 2px dashed var(--secondary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.file-upload:hover {
+    border-color: var(--primary-color);
+}
+
+.upload-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.button {
+    margin-top: 1rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background: var(--secondary-color);
+}
+
+/* Metrics */
+.metrics-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem; 
+    margin-bottom: 1rem; 
+}
+
+.metric-card {
+    background: rgb(106, 160, 222);
+    padding: 1.2rem; 
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1; 
+}
+
+.metric-value {
+    font-size: 1.6rem; 
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Filters */
+.filters-container {
+    background: rgb(9, 227, 231);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.filters-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* Charts */
+.charts-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; 
+    margin-top: 30px; 
+}
+
+.chart-card {
+    background: white;
+    padding: 30px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1; 
+}
+
+/* Table */
+/* Table Container */
+.table-container {
+    margin-top: 30px;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: separate; /* Ensures space between table cells */
+    border-spacing: 10px; /* Add space between cells */
+}
+
+/* Table Header */
+th {
+    text-align: left;
+    padding: 12px 15px; /* Add more padding for space between columns */
+    background-color: #f3f4f6;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+/* Table Data Cells */
+td {
+    text-align: left;
+    padding: 12px 15px; /* Add more padding for space between columns */
+    background-color: #ffffff;
+    color: var(--text-dark);
+    border-bottom: 1px solid #ddd;
+}

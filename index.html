@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTT Data | Student Performance Dashboard</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    
+    <!-- Highcharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/10.3.3/highcharts.min.js"></script>
+    
+    <!-- SweetAlert2 for notifications -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <img src="NTT DATA2.png" alt="NTT Data Logo" class="logo" />
+            <h1>📊 NTT Data | Student Analytics Dashboard</h1>
+        </div>
+    </header>
+
+    <!-- Upload Section -->
+    <div class="container">
+        <div class="upload-box">
+            <h2>Upload Student Data</h2>
+            <div class="file-upload">
+                <input type="file" id="fileUpload" accept=".csv" class="hidden" />
+                <label for="fileUpload" class="upload-label">
+                    <span>📁 Click to upload CSV file</span>
+                </label>
+            </div>
+            <button id="uploadButton" class="button">Upload File</button>
+        </div>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div id="dashboard" class="dashboard hidden">
+        
+        <!-- Metrics Section -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>📈 Average Marks</h3>
+                <div id="avgMarks" class="metric-value">0</div>
+            </div>
+            <div class="metric-card">
+                <h3>✅ Pass Percentage</h3>
+                <div id="passPercentage" class="metric-value">0%</div>
+            </div>
+            <div class="metric-card">
+                <h3>🗓 Average Attendance</h3>
+                <div id="avgAttendance" class="metric-value">0%</div>
+            </div>
+        </div>
+
+        <!-- Filters Section -->
+        <div class="filters-container">
+            <div class="filters-grid">
+                <div class="filter-item">
+                    <label>🏛 State</label>
+                    <select id="stateFilter">
+                        <option value="">All States</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label>🏫 School Type</label>
+                    <select id="schoolTypeFilter">
+                        <option value="">All Types</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label>🎯 Marks Range</label>
+                    <div class="marks-range">
+                        <input type="number" id="minMarks" placeholder="Min">
+                        <input type="number" id="maxMarks" placeholder="Max">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3>📊 Performance by School Type</h3>
+                <canvas id="schoolTypeChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>📉 Attendance Trends For The Schools</h3>
+                <div id="attendanceChart"></div>
+            </div>
+        </div>
+
+        <!-- Data Table Section -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>State</th>
+                        <th>School Type</th>
+                        <th>Avg Marks</th>
+                        <th>Pass %</th>
+                        <th>Attendance %</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
